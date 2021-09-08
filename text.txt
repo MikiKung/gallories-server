@@ -1,0 +1,16 @@
+req => ข้อมูลที่เราให้ไป
+res => ข้อมูลที่เราได้รับมา
+callback function ==>  ()=>{}
+
+
+
+จะรันผ่าน docker compose => เเก้ไฟล์ db.js เปลี่ยน localhost ให้เป็น mongo
+
+
+รันผ่าน local ต้องรัน docker mongo(docker run -p 27017:27017 -d --name mongo -v "./mongoData:/data/db" mongo) ก่อนเเล้วค่อยรัน app.js 
+-p   เปิดพอร์ต(เลือกportได้ (ให้คนเขีนโค้ดใช้ : ให้ image เอาไปใช้))
+-d   ทำงานในพื้นหลัง
+--name ตั้งชื่อcontainer (mongo อันเเรก)
+-v   การสร้างvolumn เพื่อให้ข้อมูลในเครื่องกับในcontainer เหมือนกัน (ถ้าไม่มีvolumn ข้อมูลจะหายถ้าลบ cointainer)
+
+อันสุดท้ายคือชื่อของ image ปกติจะชื่อเหมือนcontainer
